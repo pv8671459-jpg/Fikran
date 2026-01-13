@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayam Bakar Ala fikran - Fikran</title>
+<meta name="description" content="Restoran Ayam Spesial menyajikan ayam tradisional dengan bumbu rempah pilihan. Menu ayam bakar utuh, potong, ayam goreng, sambal & lalapan.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Base */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+html { scroll-behavior:smooth; }
+body { background:#FFF8DC; color:#2C1810; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width:10px; }
+::-webkit-scrollbar-track { background:#FFF8DC; }
+::-webkit-scrollbar-thumb { background:#8B4513; border-radius:5px; }
+::-webkit-scrollbar-thumb:hover { background:#D2691E; }
+
+/* Navigation */
+nav { position:fixed; top:0; width:100%; background:rgba(139,69,19,0.95); backdrop-filter:blur(6px); z-index:50; box-shadow:0 2px 6px rgba(0,0,0,0.3); }
+nav .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:16px; }
+nav h1 { color:white; font-size:1.75rem; }
+nav .nav-links a { color:white; text-decoration:none; margin-left:24px; font-weight:600; transition:0.3s; }
+nav .nav-links a:hover { color:#FF6347; }
+
+/* Hero */
+#home { position:relative; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white; }
+#home::before { content:""; position:absolute; inset:0; background:url('https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/82813f74-cd46-407a-ba6b-e32a2a044c28.png') center/cover no-repeat; z-index:0; }
+#home::after { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.6); z-index:0; }
+#home .hero-content { position:relative; z-index:1; padding:0 16px; }
+#home h2 { font-size:3rem; margin-bottom:16px; animation:fadeInUp 1s ease forwards; }
+#home p { font-size:1.25rem; margin-bottom:24px; animation:fadeInUp 1s ease 0.3s forwards; opacity:0; }
+.btn-primary { background:#FF6347; color:white; padding:16px 32px; border:none; font-size:1.1rem; font-weight:600; cursor:pointer; transition:0.3s; }
+.btn-primary:hover { opacity:0.9; }
+
+/* Animations */
+@keyframes fadeInUp { 0% { opacity:0; transform:translateY(20px); } 100% { opacity:1; transform:translateY(0); } }
+
+/* Sections */
+section { padding:80px 16px; max-width:1200px; margin:0 auto; }
+h2.section-title { font-size:2.5rem; text-align:center; margin-bottom:16px; }
+p.section-desc { text-align:center; margin-bottom:48px; color:#5D4037; font-size:1.1rem; }
+
+/* Menu */
+.menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+.menu-card { background:white; border:2px solid #D2691E; border-radius:12px; overflow:hidden; transition:0.3s; }
+.menu-card:hover { box-shadow:0 10px 20px rgba(0,0,0,0.2); transform:translateY(-4px); }
+.menu-card img { width:100%; height:250px; object-fit:cover; transition:0.3s; }
+.menu-card img:hover { transform:scale(1.05); }
+.menu-card .content { padding:16px; }
+.menu-card h3 { font-size:1.25rem; margin-bottom:8px; }
+.menu-card p { font-size:0.9rem; color:#5D4037; margin-bottom:8px; }
+.menu-card .price { font-size:1.2rem; font-weight:700; color:#FF6347; }
+
+/* Gallery */
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+.gallery-grid img { width:100%; height:200px; object-fit:cover; border-radius:12px; transition:0.3s; }
+.gallery-grid img:hover { transform:scale(1.05); }
+
+/* About */
+.about-grid { display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+.about-grid img { width:100%; border-radius:12px; }
+@media(min-width:768px){ .about-grid { grid-template-columns:1fr 1fr; } }
+
+/* Contact */
+.contact-grid { display:grid; grid-template-columns:1fr; gap:32px; }
+.contact-card { background:white; border:2px solid #D2691E; border-radius:12px; padding:16px; display:flex; align-items:flex-start; gap:12px; }
+.contact-card h3 { font-weight:700; margin-bottom:4px; }
+.contact-card p { color:#5D4037; }
+.map-container { width:100%; height:600px; border:2px solid #D2691E; border-radius:12px; overflow:hidden; }
+@media(min-width:768px){ .contact-grid { grid-template-columns:1fr 1fr; } }
+
+/* Footer */
+footer { background:#8B4513; color:white; padding:48px 16px; }
+footer a { color:white; transition:0.3s; }
+footer a:hover { color:#FF6347; }
+footer .footer-grid { display:grid; grid-template-columns:1fr; gap:24px; }
+@media(min-width:768px){ footer .footer-grid { grid-template-columns:repeat(3,1fr); } }
+</style>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <h1>Ayam Bakar ala abang fikran Spesial</h1>
+    <div class="nav-links">
+      <a href="#home">Beranda</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#about">Tentang</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home">
+  <div class="hero-content">
+    <h2>Ayam Bakar Tradisional</h2>
+    <p>Cita Rasa Autentik dengan Bumbu Rempah Pilihan</p>
+    <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Lihat Menu</button>
+  </div>
+</section>
+
+<!-- Menu -->
+<section id="menu">
+  <h2 class="section-title">Menu Spesial Kami</h2>
+  <p class="section-desc">Pilihan menu ayam bakar terbaik dengan harga terjangkau</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/afe3e6e9-75ca-4b59-b6f9-ffa24a3b4787.png" alt="Ayam Bakar Utuh">
+      <div class="content">
+        <h3>Ayam Bakar Utuh</h3>
+        <p>Ayam kampung utuh dibakar dengan bumbu rempah tradisional</p>
+        <p class="price">Rp 10.000</p>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/d9bdfb86-2dc8-4847-99ee-cc1f397d8757.png" alt="Ayam Bakar Potong">
+      <div class="content">
+        <h3>Ayam Bakar Potong</h3>
+        <p>Potongan ayam bakar pilihan dengan bumbu meresap sempurna</p>
+        <p class="price">Rp 50.000</p>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/15f85554-f2b0-4777-943b-a32d709eed27.png" alt="Ayam Goreng Kampung">
+      <div class="content">
+        <h3>Ayam Goreng Kampung</h3>
+        <p>Ayam goreng krispi dengan bumbu khas yang gurih</p>
+        <p class="price">Rp 35.000</p>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/c1843a6f-71e8-4070-9106-ed630c523a43.png" alt="Paket Sambal & Lalapan">
+      <div class="content">
+        <h3>Paket Sambal & Lalapan</h3>
+        <p>Sambal pedas segar dengan lalapan sayuran pilihan</p>
+        <p class="price">Rp 15.000</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="background-color: #FFE4C4;">
+  <h2 class="section-title">Galeri Kami</h2>
+  <p class="section-desc">Lihat suasana dan kelezatan ayam bakar kami</p>
+  <div class="gallery-grid">
+    <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/82813f74-cd46-407a-ba6b-e32a2a044c28.png" alt="Proses membakar ayam">
+    <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/2e329cfc-33b8-4a99-9e73-1c495cbfde74.png" alt="Chef sedang memasak">
+    <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/6e8094c8-bcfc-4034-b357-583d296d7bb8.png" alt="Interior restoran">
+    <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/8204bdb5-a2ac-42ef-9408-1bef97c77261.png" alt="Tampak depan restoran">
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <h2 class="section-title">Tentang Kami</h2>
+  <div class="about-grid">
+    <img src="https://mgx-backend-cdn.metadl.com/generate/images/899367/2026-01-12/2e329cfc-33b8-4a99-9e73-1c495cbfde74.png" alt="Proses memasak">
+    <div>
+      <p>Ayam Bakar Spesial adalah restoran yang menghadirkan cita rasa ayam bakar tradisional Indonesia dengan bumbu rempah pilihan yang meresap sempurna.</p>
+      <p>Kami menggunakan ayam kampung berkualitas tinggi yang dibakar dengan teknik tradisional menggunakan arang untuk menghasilkan aroma dan rasa yang khas.</p>
+      <p>Setiap hidangan kami dibuat dengan penuh perhatian dan dedikasi untuk memberikan pengalaman kuliner terbaik bagi pelanggan kami.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background-color:#FFE4C4;">
+  <h2 class="section-title">Hubungi Kami</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div>
+        <h3>Alamat</h3>
+        <p>Lihat lokasi kami di Google Maps</p>
+        <a href="https://maps.app.goo.gl/URi4ESbWUQZXrvT27" target="_blank">Buka di Google Maps →</a>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTEnNDAuMCJTIDEwNsKwNDknMTAuNCJF!5e0!3m2!1sen!2sid!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Restoran"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Ayam Bakar Spesial</h3>
+      <p>Restoran ayam bakar tradisional dengan cita rasa autentik Indonesia</p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <ul>
+        <li>Ayam Bakar Utuh</li>
+        <li>Ayam Bakar Potong</li>
+        <li>Ayam Goreng</li>
+        <li>Sambal & Lalapan</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ikuti Kami</h4>
+      <div>
+        <a href="#">Facebook:fastlane.id</a> | <a href="#">Instagram:m_fikrn</a> | <a href="#">WhatsApp:0882003782040</a>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:24px;">&copy; 2026 Ayam Bakar Spesial. Semua hak dilindungi.</p>
+</footer>
+
+</body>
+</html>
